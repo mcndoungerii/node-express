@@ -8,13 +8,14 @@ const port = 3000;
 
 const app = express();
 const dishRouter = require('./routes/dishRouter');
-
+const promoRouter = require('./routes/promoRouter');
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use('/dishes', dishRouter);
 app.use('/dishes/:dishId', dishRouter);
-
+app.use('/promotions', promoRouter);
+app.use('/promotions/:promoId', promoRouter);
 
 
 
